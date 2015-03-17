@@ -81,6 +81,14 @@ function ding_content_views_default_views() {
       'label' => 'Content: Has taxonomy term ID',
     ),
   );
+
+  /* No result behaivior: Custom text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = 'No related content.';
+
   $translatables['tags_list'] = array(
     t('Master'),
     t('more'),
@@ -100,6 +108,7 @@ function ding_content_views_default_views() {
     t('Tags'),
     t('Nodes based on tag'),
     t('Taxonomy term'),
+    t('No related content.'),
   );
   $export['tags_list'] = $view;
 
